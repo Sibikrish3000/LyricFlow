@@ -1,0 +1,27 @@
+# API Configurations
+api:
+  default_provider: local  # Options: local, openai, gemini
+  openai:
+    api_key: "YOUR_OPENAI_API_KEY_HERE"
+    base_url: "https://api.openai.com/v1"
+  gemini:
+    api_key: "YOUR_GEMINI_API_KEY_HERE"
+    base_url: null
+
+# Processing Rules
+processing:
+  language: auto  # or specify default like 'ja' for Japanese
+  translate_target: null  # e.g., 'en' for English translation
+  skip_existing_lyrics: true
+  on_failure: skip  # or 'log_error'
+
+# ASR (Whisper) Settings
+whisper:
+  model_size: medium  # Options: tiny, base, small, medium, large
+  device: cpu  # or 'cuda' for GPU acceleration
+  use_vad: true  # Voice Activity Detection
+
+# Caching
+caching:
+  enabled: true
+  ttl: 2592000  # 30 days in seconds
